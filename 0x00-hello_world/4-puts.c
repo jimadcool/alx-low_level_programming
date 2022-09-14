@@ -1,21 +1,12 @@
-#include <stdlib.h>
-#include <stdlib.h>
-#include <time.h>
+#inclde <stdio.h>
+
 /**
  * main - Entry point
  *
- * Return: Always 0 (success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char low, e, q;
-	e = 'e';
-	q = 'q';
-	for (low = 'a'; low <= 'z'; low++)
-	{
-		if (low != e && low != q)
-			putchar(low);
-	}
-	printf("\n");
+	puts("\"programming is like building a multilingual puzzle");
 	return (0);
 }
