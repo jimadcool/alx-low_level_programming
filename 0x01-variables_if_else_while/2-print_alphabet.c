@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - Entry point
+ * main - program that prints the alphabet in lowercase, followed by a new line
+ * You can only use the putchar
  *
  * Return: Always 0 (Success)
  */
