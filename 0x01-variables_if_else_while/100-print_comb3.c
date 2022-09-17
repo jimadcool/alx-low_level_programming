@@ -5,9 +5,8 @@
  * Numbers must be separated by ,followed by a space
  * The two digits must be different
  * 01 and 10 are considered the same combination of the two digits 0 and 1
- *
- * Return: Always 0 (Success)
- */
+* Return: 0
+*/
 int main(void)
 {
 	int n1 = 48;
@@ -21,7 +20,7 @@ int main(void)
 		{
 			putchar(n1);
 			putchar(n2);
-			if (n1 != 56 || n2 != 56)
+			if (n1 != 56 || n2 != 57)
 			{
 				putchar(com);
 				putchar(32);
