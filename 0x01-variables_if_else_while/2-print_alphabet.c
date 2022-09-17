@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 /**
  * main - program that prints the alphabet in lowercase, followed by a new line
