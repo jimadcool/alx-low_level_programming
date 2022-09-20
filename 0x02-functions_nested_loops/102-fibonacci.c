@@ -1,20 +1,34 @@
 #include <stdio.h>
-
 /**
-* main - Prints natural numbers below 1024 that are
-* multiplies of 3 or 5
-*
-* Return: Always 0.
+* main - main block
+* Description: Print the first 50 fibonacci numbers, starting with 1 and 2.
+* Numbers must be coma and space separated.
+* Return: 0
 */
 int main(void)
 {
-	int a, b;
+	int count = 2;
+	long int i = 1, j = 2;
+	long int k;
 
-	for (a = 1; a < 1024; a++)
+	printf("%lu, ", i);
+	while (count <= 50)
 	{
-		if ((a % 3) == 0 || (a % 5) == 0)
-			b += a;
+		if (count == 50)
+		{
+			printf("%lu\n", j);
+		}
+		else
+		{
+			printf("%lu, ", j);
+		}
+
+		k = j;
+		j += i;
+		i = k;
+		count++;
 	}
-	printf("%d\n", b);
+
 	return (0);
+
 }
