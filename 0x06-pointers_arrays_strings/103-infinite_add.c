@@ -1,44 +1,53 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
 * infinite_add - adds two numbers
 * @n1: number one.
 * @n2: number two
-* @r: buffer that the function will use to store the result.
-* @size_r: buffer size:
-* Return: the pointer to dest.
+* @r: result
+* @size_r: result lenght
+* Return: sum
+*
 */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int add = 0, len1, len2, i, j;
+	/* local variable declaration */
+	int i = 0, j = 0, k, l = 0, f, s, d = 0;
 
-	for (len1 = 0; n1[len1]; len1++)
-		;
-	if (len1 > size_r || len2 > size_r)
+	while (n1[i] != '\0')
+		i++;
+	while (n2[j] != '\0')
+		j++;
+	if (i > j)
+		l = i;
+	else
+		l = j;
+	if (l + 1 > size_r)
 		return (0);
-	len1--;
-	len2--;
-	size_r--;
-	for (i = 0; i < size_r; i++, len1--, len2--)
+	r[l] = '\0';
+	for (k = l - 1 ; k >= 0 ; k--)
 	{
-		if (len1 >= 0)
-			add += n1[len1] - '0';
-		if (len2 >= 0)
-			add += n2[len2] - '0';
-		if (len1 < 0 && len2 < 0 && add == 0)
-			break;
-		r[i] = add % 10 + '0';
-		add /= 10;
+		i--;
+		j--;
+		if (i >= 0)
+			f = n1[i] - '0';
+		else
+			f = 0;
+		if (j >= 0)
+			s = n2[j] - '0';
+		else
+			s = 0;
+		r[k] = (f + s + d) % 10 + '0';
+		d = (f + s + d) / 10;
 	}
-	r[i] = '\0';
-	if (len1 >= 0 || len2 >= 0 || add)
-		return (0);
-	for (i--, j = 0; i > j; i--, j++)
+	if (d == 1)
 	{
-		add = r[i];
-		r[i] = r[j];
-		r[j] = add;
+		r[l + 1] = '\0';
+		if (l + 2 > size_r)
+			return (0);
+		while (l-- >= 0)
+			r[l + 1] = r[l];
+		r[0] = d + '0';
 	}
 	return (r);
 }
